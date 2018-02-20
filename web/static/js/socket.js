@@ -60,7 +60,7 @@ const createSocket = (topicId) => {
     channel
         .join()
         .receive('ok', (resp) => {
-            console.log('Joined successfully', resp);
+            renderComments(resp.comments);
         })
         .receive('error', (resp) => {
             console.log('Unable to join', resp);
@@ -72,5 +72,17 @@ const createSocket = (topicId) => {
         channel.push('command:add', { content: content });
     });
 };
+
+function renderComments(comments) {
+    const renderedComments = comments.map((comment) => {
+        return `
+            <li class="collection-item">
+                ${comment.content}
+            </li>
+        `;
+    });
+
+    document.querySelector('.collection').innerHTML = renderedComments.join('');
+}
 
 window.createSocket = createSocket;
