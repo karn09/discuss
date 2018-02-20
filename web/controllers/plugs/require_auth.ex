@@ -1,4 +1,8 @@
 defmodule Discuss.Plugs.RequireAuth do
+  @moduledoc """
+      RequireAuth
+      Validate whether user is logged in, if not redirect and stop process.
+  """
   import Plug.Conn
   import Phoenix.Controller
 
