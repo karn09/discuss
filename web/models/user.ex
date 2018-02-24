@@ -1,6 +1,9 @@
 defmodule Discuss.User do
   use Discuss.Web, :model
 
+  # allow for conversion and return of JSON user.
+  @derive {Poison.Encoder, only: [:email]}
+
   schema "users" do
     field(:email, :string)
     field(:provider, :string)
