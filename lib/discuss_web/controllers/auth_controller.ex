@@ -3,7 +3,7 @@ defmodule Discuss.AuthController do
   plug(Ueberauth)
 
   # alias Discuss.User to User
-  alias Discuss.User
+  alias Discuss.Accounts.User
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
     user_params = %{token: auth.credentials.token, email: auth.info.email, provider: "github"}

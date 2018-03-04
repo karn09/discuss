@@ -1,4 +1,4 @@
-defmodule Discuss.Comment do
+defmodule Discuss.Discussions.Comment do
   use Discuss.Web, :model
 
   # Specify that Poison only encode to JSON specified atoms.
@@ -6,8 +6,8 @@ defmodule Discuss.Comment do
 
   schema "comments" do
     field(:content, :string)
-    belongs_to(:user, Discuss.User)
-    belongs_to(:topic, Discuss.Topic)
+    belongs_to(:user, Discuss.Accounts.User)
+    belongs_to(:topic, Discuss.Discussions.Topic)
 
     timestamps()
   end

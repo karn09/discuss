@@ -1,4 +1,4 @@
-defmodule Discuss.User do
+defmodule Discuss.Accounts.User do
   use Discuss.Web, :model
 
   # allow for conversion and return of JSON user.
@@ -8,8 +8,8 @@ defmodule Discuss.User do
     field(:email, :string)
     field(:provider, :string)
     field(:token, :string)
-    has_many(:topics, Discuss.Topic)
-    has_many(:comments, Discuss.Comment)
+    has_many(:topics, Discuss.Discussions.Topic)
+    has_many(:comments, Discuss.Discussions.Comment)
 
     timestamps()
   end

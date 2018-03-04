@@ -1,10 +1,10 @@
-defmodule Discuss.Topic do
+defmodule Discuss.Discussions.Topic do
   use Discuss.Web, :model
 
   schema "topics" do
     field(:title, :string)
-    belongs_to(:user, Discuss.User)
-    has_many(:comments, Discuss.Comment)
+    belongs_to(:user, Discuss.Accounts.User)
+    has_many(:comments, Discuss.Discussions.Comment)
   end
 
   def changeset(struct, params \\ %{}) do

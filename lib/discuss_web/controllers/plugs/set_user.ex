@@ -8,7 +8,7 @@ defmodule Discuss.Plugs.SetUser do
   # import Phoenix.Controller
 
   alias Discuss.Repo
-  alias Discuss.User
+  alias Discuss.Accounts.User
 
   @doc """
   Called only when first initialized, afterward the stored result is always injected into call as second parameter.
